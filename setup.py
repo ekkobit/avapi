@@ -28,7 +28,7 @@ setup(name='avapi',
       test_suite='nose.collector',
       tests_require=['nose'],
       install_requires=[
-          'json', 'pandas', 'requests',
+          'json', 'pandas', 'requests', 'os',
       ],
       include_package_data=True,
       )

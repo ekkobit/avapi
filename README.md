@@ -60,3 +60,8 @@ for api_call in api_calls:
     aa.get_data(api_call['url'] + api_key, output=None, save_csv=True, csv_path=full_path)
     sleep(15)
 ```
+
+## Issues
+
+- [x] **Issue 1 -** Fulfill Alpha Vantage's request to preserve content of JSON/CSV responses in both success and error cases.
+- [ ] **Issue 2 -** get_data() and get_data_by_url(), where get_data works with keywords instead.

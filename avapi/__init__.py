@@ -11,6 +11,7 @@ __email__ = "olemolaussen@gmail.com"
 import requests
 import json
 import pandas as pd
+import os
 
 
 def get_data(url, output='df', save_csv=False, save_json=False, csv_path=None, json_path=None):
@@ -26,6 +27,12 @@ def get_data(url, output='df', save_csv=False, save_json=False, csv_path=None, j
     '''
     r = requests.get(url)
     json_content = r.content
+
+    path = os.path.abspath(__file__)
+    dir_path = os.path.dirname(path)
+
+    with open(dir_path + '/response.json', 'wb') as file:
+        file.write(json_content)
 
     if save_to_csv or save_to_json:
 
@@ -63,7 +70,7 @@ def save_to_json(json_content, path):
     '''
 
     with open(path, 'wb') as f:
-        f.write(json.content)
+        f.write(json_content)
 
 def save_to_csv(json_content, csv_path):
     '''Saves json content to csv file.
@@ -130,3 +137,12 @@ def to_df(dict):
     df.set_index('date', inplace=True)
 
     return df
+
+def response():
+
+    path = os.path.abspath(__file__)
+    dir_path = os.path.dirname(path)
+
+    with open(dir_path + '/response.json', 'r') as file:
+        reader = file.read()
+    return reader
