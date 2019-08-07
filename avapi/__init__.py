@@ -1,6 +1,6 @@
 '''Package for getting and manipulating data from Alpha Vantage
 
-Functions: get_data(), save_to_json(), save_to_csv, to_dict(), open_json(), to_df().
+Functions: get_data(), save_to_json(), save_to_csv, to_dict(), open_json(), to_df(), open_json().
 '''
 
 
@@ -139,6 +139,10 @@ def to_df(dict):
     return df
 
 def response():
+    '''Opens and reads last response from Alpha Vantage server.
+
+    :return: Content of response.
+    '''
 
     path = os.path.abspath(__file__)
     dir_path = os.path.dirname(path)
