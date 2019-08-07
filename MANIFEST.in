@@ -1,0 +1,3 @@
+include README.md
+include vantage/tests/*.json
+include vantage/urls.json
