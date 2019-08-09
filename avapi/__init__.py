@@ -1,8 +1,8 @@
 '''Package for getting and manipulating data from Alpha Vantage
 
-Functions: get_data(), save_to_json(), save_to_csv, to_dict(), open_json(), to_df(), open_json().
+Functions: get_data(), save_to_json(), save_to_csv, to_dict(), open_json(),
+to_df(), open_json().
 '''
-
 
 __authors__ = "Ole Olaussen"
 __email__ = "olemolaussen@gmail.com"
@@ -14,11 +14,13 @@ import pandas as pd
 import os
 
 
-def get_data(url, output='df', save_csv=False, save_json=False, csv_path=None, json_path=None):
+def get_data(url, output='df', save_csv=False, save_json=False, csv_path=None,
+             json_path=None):
     '''Downloads a json file from Alpha Vantage.
 
     :param url: String. API-call to Alpha Vantage server (url).
-    :kwarg output: String. Excepts "dictionary", "json" and 'df'. Default df, for Pandas data frame.
+    :kwarg output: String. Excepts "dictionary", "json" and 'df'. Default df,
+        for Pandas data frame.
     :kwarg save_csv: Boolean. Default False. Save data as a csv file.
     :kwarg save_json: Boolean. Default False. Save data as a json file.
     :kwarg csv_path: String. Path, incl. filename of where to save csv.
@@ -66,11 +68,13 @@ def get_data(url, output='df', save_csv=False, save_json=False, csv_path=None, j
 def save_to_json(json_content, path):
     ''' Saves json file to directory.
 
-    :param path: String. Path to where file should be saved. Including file name.
+    :param path: String. Path to where file should be saved. Including file
+        name.
     '''
 
     with open(path, 'wb') as f:
         f.write(json_content)
+
 
 def save_to_csv(json_content, csv_path):
     '''Saves json content to csv file.
@@ -110,17 +114,22 @@ def open_json(file):
 
 
 def to_df(dict):
-    '''Converts dictionary of json data file, downloaded from Alpha Vantage, to pandas dataframes.
+    '''Converts dictionary of json data file, downloaded from Alpha Vantage,
+       to pandas dataframes.
 
     :param file: String. path to json file
-    :return: Pandas data frame. Returns the converted json data file as a data frame.
+    :return: Pandas data frame. Returns the converted json data file as a data
+        frame.
     '''
 
-    outer = [key for key, value in dict.items()] # Get outer dictionaries
+    # Get outer dictionaries
+    outer = [key for key, value in dict.items()]
 
-    dates = [key for key, value in dict[outer[1]].items()] # Get timestamps
+    # Get timestamps
+    dates = [key for key, value in dict[outer[1]].items()]
 
-    columns = [key for key, value in dict[outer[1]][dates[0]].items()] # Get columns
+    # Get columns
+    columns = [key for key, value in dict[outer[1]][dates[0]].items()]
 
     data = {'date': dates}
 
@@ -133,10 +142,11 @@ def to_df(dict):
         for column in columns:
             data[column].append(dict[outer[1]][date][column])
 
-    df = pd.DataFrame(data) # Convert dict to pandas data frame
+    df = pd.DataFrame(data)  # Convert dict to pandas data frame
     df.set_index('date', inplace=True)
 
     return df
+
 
 def response():
     '''Opens and reads last response from Alpha Vantage server.
