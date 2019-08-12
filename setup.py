@@ -1,4 +1,4 @@
-from setuptools import setup
+import setuptools
 
 
 def readme():
@@ -11,28 +11,27 @@ def license():
         return f.read()
 
 
-setup(name='avapi',
-      version='0.1',
-      description='Convert json data files from Alpha Vantage to Pandas data \
-        frames.',
-      long_description=readme(),
-      long_description_content_type="text/markdown",
-      classifiers=[
-        'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.7.3',
-        'Topic :: Data Processing :: Finance',
-      ],
-      url='http://github.com/olemola/vantage',
-      author='Ole Olaussen',
-      author_email='olemolaussen@gmail.com',
-      license='MIT',
-      license_file=license(),
-      packages=setuptools.find_packages(),
-      test_suite='nose.collector',
-      tests_require=['nose'],
-      install_requires=[
-          'json', 'pandas', 'requests', 'os',
-      ],
-      include_package_data=True,
-      )
+setuptools.setup(name='avapi',
+                 version='0.1',
+                 description='Get dat from Alpha Vantage into python.',
+                 long_description=readme(),
+                 long_description_content_type="text/markdown",
+                 classifiers=[
+                        'Development Status :: 3 - Alpha',
+                        'License :: OSI Approved :: MIT License',
+                        'Programming Language :: Python :: 3.7.3',
+                        'Topic :: Data Processing :: Finance',
+                        ],
+                 url='http://github.com/olemola/vantage',
+                 author='Ole Olaussen',
+                 author_email='ole@ekkobit.com',
+                 license='MIT',
+                 license_file=license(),
+                 packages=setuptools.find_packages(),
+                 test_suite='nose.collector',
+                 tests_require=['nose'],
+                 install_requires=[
+                        'json', 'pandas', 'requests', 'os',
+                        ],
+                 include_package_data=True,
+                 )

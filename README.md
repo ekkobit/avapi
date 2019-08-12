@@ -1,4 +1,4 @@
-# AVapi
+# AVAPI
 ### Get data from Alpha Vantage into python.
 
 Author:
@@ -22,7 +22,7 @@ Follow instructions on the [Alpha vantage](https://www.alphavantage.co) website 
 
 The "demo" api-key only works for these specific examples. If you modify the code you also need to provide your own api-key.
 
-##### Single file download
+##### Single download
 
 ```python
 import avapi as aa
