@@ -11,9 +11,8 @@ There are other python wrappers for the alpha vantage API, such as [alphavantage
 
 ### Installation
 
-```shell
-pip install avapi
-```
+Will soon be on PyPi
+
 ### Before use
 
 Follow instructions on the [Alpha vantage](https://www.alphavantage.co) website to get a free API-key.  The [docs](https://www.alphavantage.co/documentation/) provide all necessary info for à la carte downloading of historical data and indicators. Please checkout Alpha Vantage [support](https://www.alphavantage.co/support/#support) and read through the [Frequently Asked Questions](https://www.alphavantage.co/support/#support).
