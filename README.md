@@ -11,7 +11,9 @@ There are other python wrappers for the alpha vantage API, such as [alphavantage
 
 ### Installation
 
-Will soon be on PyPi
+```python
+pip install avapi
+```
 
 ### Before use
 
@@ -85,3 +87,4 @@ print(response)
 
 - [x] **Issue 1 -** Fulfill Alpha Vantage's request to preserve content of JSON/CSV responses in both success and error cases.
 - [x] **Issue 2 -** Make get_data() work with \*\*kwargs.
+- [ ] **Issue 3 -** Write basic set of tests.

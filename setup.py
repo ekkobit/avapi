@@ -12,15 +12,15 @@ def license():
 
 
 setuptools.setup(name='avapi',
-                 version='0.1',
-                 description='Get dat from Alpha Vantage into python.',
+                 version='0.1.4',
+                 description='Get data from Alpha Vantage into python.',
                  long_description=readme(),
                  long_description_content_type="text/markdown",
                  classifiers=[
                         'Development Status :: 3 - Alpha',
                         'License :: OSI Approved :: MIT License',
-                        'Programming Language :: Python :: 3.7.3',
-                        'Topic :: Data Processing :: Finance',
+                        'Programming Language :: Python :: 3',
+                        'Topic :: Office/Business :: Financial :: Investment',
                         ],
                  url='http://github.com/olemola/vantage',
                  author='Ole Olaussen',
@@ -31,7 +31,7 @@ setuptools.setup(name='avapi',
                  test_suite='nose.collector',
                  tests_require=['nose'],
                  install_requires=[
-                        'json', 'pandas', 'requests', 'os',
+                        'pandas', 'requests',
                         ],
                  include_package_data=True,
                  )
