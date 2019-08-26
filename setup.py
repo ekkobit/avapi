@@ -12,7 +12,7 @@ def license():
 
 
 setuptools.setup(name='avapi',
-                 version='0.1.4',
+                 version='0.1.5',
                  description='Get data from Alpha Vantage into python.',
                  long_description=readme(),
                  long_description_content_type="text/markdown",

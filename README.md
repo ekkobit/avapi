@@ -1,8 +1,9 @@
 # AVAPI
 ### Get data from Alpha Vantage into python.
 
-Author:
-#### Ole Olaussen: ole@ekkobit.com
+Authors:
+- Ole Olaussen: ole.olaussen@ekkobit.com
+- Xuan Ling: xuan.ling@ekkobit.com
 
 
 ## Documentation

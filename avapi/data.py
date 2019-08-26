@@ -4,8 +4,8 @@ Functions: get_data(), save_to_json(), save_to_csv, to_dict(), open_json(),
 to_df(), open_json().
 '''
 
-__authors__ = "Ole Olaussen"
-__email__ = "ole@ekkobit.com"
+__authors__ = "Ole Olaussen, Xuan Ling"
+__email__ = "ole.olaussen@ekkobit.com, xuan.ling@ekkobit.com"
 
 
 import requests
