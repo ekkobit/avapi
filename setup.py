@@ -1,4 +1,5 @@
 import setuptools
+from forkover import __version__, __authors__, __email__
 
 
 def readme():
@@ -12,7 +13,7 @@ def license():
 
 
 setuptools.setup(name='avapi',
-                 version='0.1.5',
+                 version=__version__,
                  description='Get data from Alpha Vantage into python.',
                  long_description=readme(),
                  long_description_content_type="text/markdown",
@@ -23,8 +24,8 @@ setuptools.setup(name='avapi',
                         'Topic :: Office/Business :: Financial :: Investment',
                         ],
                  url='http://github.com/olemola/vantage',
-                 author='Ole Olaussen',
-                 author_email='ole.olaussen@ekkobit.com',
+                 author=__authors__,
+                 author_email=__email__,
                  license='MIT',
                  license_file=license(),
                  packages=setuptools.find_packages(),

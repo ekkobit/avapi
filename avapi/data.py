@@ -1,7 +1,5 @@
-'''Package for getting and manipulating data from Alpha Vantage
-
-Functions: get_data(), save_to_json(), save_to_csv, to_dict(), open_json(),
-to_df(), open_json().
+'''The data module contains fuctions to get data from Alpha Vantage into
+python. Data may be saved as csv files or loaded as Pandas data frames.
 '''
 
 __authors__ = "Ole Olaussen, Xuan Ling"
@@ -15,17 +13,44 @@ import os
 
 
 def get_data(save_to=None, **kwargs):
-    '''Downloads a json file from Alpha Vantage.
+    r'''Downloads a json file from Alpha Vantage.
 
-    :kwarg save_to: String. Default None. Where to save csv file if kwarg
-     datatype="csv" is provided.
-    :**kwargs: Alpha Vantage function parameters.
-    :return: Dictionary. If datatype is not "csv", a dictionary is returned.
+    :param save_to: Default None. Where to save csv file if kwarg
+        datatype="csv" is provided.
+    :type save_to: ``str`` or ``None``
+    :param \**kwargs:
+        See below
+
+    :Keyword Arguments:
+        * *function* (``str``) --
+            Any of the Alpha Vantage function types. \
+            Such as ``"TIME_SERIES_INTRADAY"``. \
+            See their `documentation \
+            <https://www.alphavantage.co/documentation/>`_
+        * *symbol* (``str``) --
+            Company ticker symbol, such as ``"GOOGL"``.
+        * *interval* (``str``) --
+            ``"1min"``, ``"5min"``, ``"15min"``, ``"30min"`` or ``"60min"``. \
+            Also ``"daily"``, ``"weekly"``, ``"monthly"``
+        * *outputsize* (``str``) --
+            ``"compact"`` (default) or ``"full"``
+        * *datatype* (``str``) --
+            ``"json"`` (default) or ``"csv"``
+        * *apikey* (``str``) --
+            You need to get a free API key from `Alpha Vantage \
+            <https://www.alphavantage.co/>`_
+
+    The above list is not exhaustive. Please see  `Alpha Vantage docs
+    <https://www.alphavantage.co/documentation/>`_ for
+    complete listing and what fuction requires which keyword arguments.
+
+    :returns: If datatype is not "csv", a dictionary is returned
+    :rtype: ``dict`` [``str``, ``float``]
     '''
 
     url = 'https://www.alphavantage.co/query?'
     for key, value in kwargs.items():
-        url += key + '=' + value + '&'
+        url += key + '=' + str(value) + '&'
     url = url[:-1]
 
     csv = 'datatype' in kwargs and kwargs['datatype'] == 'csv'
@@ -54,12 +79,13 @@ def get_data(save_to=None, **kwargs):
 
 
 def to_df(dic):
-    '''Converts dictionary of json data file, downloaded from Alpha Vantage,
-       to pandas dataframes.
+    '''Converts data dictionary (from json data), downloaded from Alpha
+    Vantage, to pandas dataframes.
 
-    :param dic: Python dictionary of Alpha Vantage time series data.
-    :return: Pandas data frame. Returns the converted json data file as a data
-        frame.
+    :param dic: Python dictionary of Alpha Vantage time series data
+    :type dic: ``dict`` [``str``, ``float``]
+    :returns: Returns the converted dictionary as a Pandas data frame
+    :rtype: ``pandas.DataFrame()``
     '''
 
     # Get outer dictionaries
@@ -91,7 +117,8 @@ def to_df(dic):
 def response():
     '''Opens and reads last response from Alpha Vantage server.
 
-    :return: Content of response.
+    :returns: Content of response.
+    :rtype: ``str``
     '''
 
     path = os.path.abspath(__file__)
