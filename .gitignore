@@ -10,4 +10,5 @@
 # Setuptools egg-info folder.
 /avapi.egg-info/
 
-
+# Generated documentation files
+/docs/build/

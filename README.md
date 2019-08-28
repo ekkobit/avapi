@@ -82,10 +82,7 @@ response = aa.response()
 print(response)
 ```
 
+## Contribute
 
-
-## Issues
-
-- [x] **Issue 1 -** Fulfill Alpha Vantage's request to preserve content of JSON/CSV responses in both success and error cases.
-- [x] **Issue 2 -** Make get_data() work with \*\*kwargs.
-- [ ] **Issue 3 -** Write basic set of tests.
+- Issue Tracker: https://github.com/ekkobit/avapi/issues
+- Source Code: https://github.com/ekkobit/avapi
