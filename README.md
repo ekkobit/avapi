@@ -8,6 +8,8 @@ Authors:
 
 ## Documentation
 
+For more complete documentation, please go to [ReadTheDocs](https://avapi.readthedocs.io).
+
 There are other python wrappers for the alpha vantage API, such as [alphavantage](https://pypi.org/project/alphavantage/), [alpha-vantage-downloader](https://pypi.org/project/alpha-vantage-downloader/), [alpha_vantage](https://pypi.org/project/alpha_vantage/) and [alphavantage-wrapper](https://pypi.org/project/alphavantage-wrapper/). They all have in common that they have different functions for each of the data types that Alpha Vantage offers. This may be less practical when downloading multiple data types at multiple resolutions in one session. Avapi has a single function that can download any data type from Alpha Vantage: avapi.get_data() takes \*\*kwargs as input and outputs a  dictionary, unless datatype="csv" is given, in which case a csv file is saved. If the data type is time series, avapi.to_df() converts it to a Pandas data frame. The intention is a simple and flexible way to get data from Alpha Vantage into python.
 
 ### Installation
@@ -86,3 +88,4 @@ print(response)
 
 - Issue Tracker: https://github.com/ekkobit/avapi/issues
 - Source Code: https://github.com/ekkobit/avapi
+- Documentation: https://avapi.readthedocs.io
