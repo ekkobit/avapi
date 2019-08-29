@@ -1,5 +1,5 @@
 import setuptools
-from forkover import __version__, __authors__, __email__
+from avapi import __version__, __authors__, __email__
 
 
 def readme():
