@@ -13,16 +13,17 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
-# sys.path.append(os.path.relpath('../../avapi/'))
-# from avapi import __version__, __authors__, __email__
+sys.path.append(os.path.relpath('../avapi/'))
+from avapi import __version__, __authors__, __email__
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'AVAPI'
 copyright = '2019, Ekkobit AS'
-author = 'Ole Martin Olaussen, Ling Xuan'
-version = '0.1.6'
+author = __authors__
+version = __version__
+email = __email__
 
 
 # -- General configuration ---------------------------------------------------
