@@ -59,3 +59,7 @@ html_static_path = ['_static']
 
 # Enable todos
 todo_include_todos = True
+
+# explicitly setting master_doc to index.rst to prevent readthedocs to use
+# contents.rst
+master_doc = 'index'
