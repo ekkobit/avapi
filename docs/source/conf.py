@@ -13,8 +13,8 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
-sys.path.append(os.path.relpath('../../avapi/'))
-from avapi import __version__, __authors__, __email__
+# sys.path.append(os.path.relpath('../../avapi/'))
+# from avapi import __version__, __authors__, __email__
 
 
 # -- Project information -----------------------------------------------------
