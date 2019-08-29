@@ -15,8 +15,8 @@ import os
 def get_data(save_to=None, **kwargs):
     r'''Downloads a json file from Alpha Vantage.
 
-    :param save_to: Default None. Where to save csv file if kwarg
-        datatype="csv" is provided.
+    :param save_to: Default None. Where to save csv file if
+        ``datatype="csv"`` is provided.
     :type save_to: ``str`` or ``None``
     :param \**kwargs:
         See below
@@ -44,7 +44,7 @@ def get_data(save_to=None, **kwargs):
     <https://www.alphavantage.co/documentation/>`_ for
     complete listing and what fuction requires which keyword arguments.
 
-    :returns: If datatype is not "csv", a dictionary is returned
+    :returns: If datatype is not set to ``"csv"``, a dictionary is returned
     :rtype: ``dict`` [``str``, ``float``]
     '''
 
@@ -79,8 +79,8 @@ def get_data(save_to=None, **kwargs):
 
 
 def to_df(dic):
-    '''Converts data dictionary (from json data), downloaded from Alpha
-    Vantage, to pandas dataframes.
+    '''Converts data dictionary, downloaded from Alpha Vantage, to pandas
+    dataframes.
 
     :param dic: Python dictionary of Alpha Vantage time series data
     :type dic: ``dict`` [``str``, ``float``]
