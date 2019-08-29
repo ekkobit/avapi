@@ -11,4 +11,6 @@
 /avapi.egg-info/
 
 # Generated documentation files
-/docs/build/
+/docs/_build/
+/docs/static/
+/docs/_templates/
